@@ -15,8 +15,8 @@ jobs:
         with:
           script: |
             const result = await github.pulls.createReview({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
+              owner: Vandy-2498,
+              repo: bypass,
               pull_number: context.payload.pull_request.number,
               event: "APPROVE"
             });
