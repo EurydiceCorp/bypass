@@ -5,6 +5,7 @@ on:
     branches:
       - main
 
+
 jobs:
   print:
     runs-on: ubuntu-latest
@@ -18,4 +19,3 @@ jobs:
           for q in (os.getenv("MY_VAL")):
             print(q)
         shell: python
-        
