@@ -7,17 +7,17 @@ on:
 jobs:
   build:
     name: Auto-approve
-    runs-on: ubuntu-latest
-    if: github.event.pull_request.user.login == 'adam-eurydicecorp'
+    runs-on: self-hosted
+    if: github.event.pull_request.user.login == 'Vandy-2498'
     steps:
       - name: Approve Pull Request
         uses: actions/github-script@v4
         with:
           script: |
             const result = await github.pulls.createReview({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              pull_number: context.payload.pull_request.number,
+              owner: Vandy-2498,
+              repo: bypass,
+              pull_number: 1,
               event: "APPROVE"
             });
             console.log(result.status);
